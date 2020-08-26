@@ -7,12 +7,8 @@
             </a-col>
             <a-col :xs="0" :sm="0" :md="14" :lg="8" :xl="5">
                 <a-menu mode="horizontal">
-                    <a-menu-item key="home">
-                        <a-icon type="home"/>首页
-                    </a-menu-item>
-                    <a-menu-item key="about">
-                        <a-icon type="home"/>测试页
-                    </a-menu-item>
+                    <a-menu-item key="home">首页</a-menu-item>
+                    <a-menu-item key="about">标签</a-menu-item>
                 </a-menu>
             </a-col>
         </a-row>
