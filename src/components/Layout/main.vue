@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a-affix :offset-top="top">
+        <a-affix class="affix" :offset-top="top">
             <Header/>
         </a-affix>
         <router-view/>
@@ -9,7 +9,7 @@
 
 <script>
     import Header from './components/Header'
-    import {Affix} from 'ant-design-vue'
+    import { Affix } from 'ant-design-vue'
     export default {
         name: 'Main',
         components: {
@@ -24,6 +24,8 @@
     }
 </script>
 
-<style lang="less" scoped>
-
+<style lang="less">
+    .ant-affix  {
+      z-index: 999 !important;
+    }
 </style>

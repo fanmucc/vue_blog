@@ -12,6 +12,7 @@
                 </span>
               </template>
               <img
+                v-show="index % 2 === 0"
                 slot="extra"
                 width="272"
                 alt="logo"
@@ -26,23 +27,22 @@
       </template>
       <template slot="right">
           <a-card hoverable style="width: 300px">
-            <img
-              slot="cover"
-              alt="example"
-              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-            />
-            <template slot="actions" class="ant-card-actions">
-              <!-- <a-icon key="setting" type="setting" />
-              <a-icon key="edit" type="edit" />
-              <a-icon key="ellipsis" type="ellipsis" /> -->
-              123
-            </template>
-            <a-card-meta title="Card title" description="This is the description">
-              <a-avatar
-                slot="avatar"
-                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+              <img
+                slot="cover"
+                alt="example"
+                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
               />
-            </a-card-meta>
+              <template slot="actions" class="ant-card-actions">
+                <a-icon key="setting" type="setting" />
+                <a-icon key="edit" type="edit" />
+                <a-icon key="ellipsis" type="ellipsis" />
+              </template>
+              <a-card-meta title="Card title" description="This is the description">
+                <a-avatar
+                  slot="avatar"
+                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+                />
+              </a-card-meta>
           </a-card>
       </template>
     </page-view>
@@ -68,7 +68,7 @@ import { Button,  Row, Col, Menu, Icon, List, Avatar, Card } from 'ant-design-vu
 const MenuItem = Menu.Item
 const ListItem = List.Item
 const ListItemMeta = ListItem.Meta
-const CartMeta = Card.Meta
+const CardMeta = Card.Meta
 export default {
   name: 'Home',
   components: {
@@ -83,7 +83,7 @@ export default {
     'a-avatar': Avatar,
     'a-list-item-meta': ListItemMeta,
     'a-card': Card,
-    'a-card-meta': CartMeta,
+    'a-card-meta':CardMeta,
     PageView
   },
   data() {
@@ -105,7 +105,7 @@ export default {
   },
 }
 </script>
-<style lang="less" scoped> 
+<style lang="less" scoped>
   .list {
     margin: 0;
     padding: 0;
