@@ -11,21 +11,40 @@
                   {{ text }}
                 </span>
               </template>
-              <!-- <img
+              <img
                 slot="extra"
                 width="272"
                 alt="logo"
                 src="https://gw.alipayobjects.com/zos/rmsportal/mqaQswcyDLcXyDKnZfES.png"
-              /> -->
+              />
               <a-list-item-meta :description="item.description">
                 <a slot="title" :href="item.href">{{ item.title }}</a>
-                <a-avatar slot="avatar" :src="item.avatar" />
               </a-list-item-meta>
               {{ item.content }}
             </a-list-item>
           </a-list>
       </template>
-      <template slot="right">456bbb</template>
+      <template slot="right">
+          <a-card hoverable style="width: 300px">
+            <img
+              slot="cover"
+              alt="example"
+              src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+            />
+            <template slot="actions" class="ant-card-actions">
+              <!-- <a-icon key="setting" type="setting" />
+              <a-icon key="edit" type="edit" />
+              <a-icon key="ellipsis" type="ellipsis" /> -->
+              123
+            </template>
+            <a-card-meta title="Card title" description="This is the description">
+              <a-avatar
+                slot="avatar"
+                src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
+              />
+            </a-card-meta>
+          </a-card>
+      </template>
     </page-view>
   </div>
 </template>
@@ -45,10 +64,11 @@ for (let i = 0; i < 23; i++) {
   });
 }
 import PageView from '../components/pageView'
-import { Button,  Row, Col, Menu, Icon, List, Avatar } from 'ant-design-vue'
+import { Button,  Row, Col, Menu, Icon, List, Avatar, Card } from 'ant-design-vue'
 const MenuItem = Menu.Item
 const ListItem = List.Item
 const ListItemMeta = ListItem.Meta
+const CartMeta = Card.Meta
 export default {
   name: 'Home',
   components: {
@@ -62,6 +82,8 @@ export default {
     'a-list-item': ListItem,
     'a-avatar': Avatar,
     'a-list-item-meta': ListItemMeta,
+    'a-card': Card,
+    'a-card-meta': CartMeta,
     PageView
   },
   data() {
@@ -77,6 +99,7 @@ export default {
         { type: 'star-o', text: '156' },
         { type: 'like-o', text: '156' },
         { type: 'message', text: '2' },
+        { type: 'message', text: '查看详情' },
       ],
     };
   },
