@@ -20,7 +20,6 @@
               />
               <a-list-item-meta :description="item.description">
                 <a slot="title" :href="item.href">{{ item.title }}</a>
-                <a-avatar slot="avatar" :src="item.avatar" />
               </a-list-item-meta>
               {{ item.content }}
             </a-list-item>
@@ -100,6 +99,7 @@ export default {
         { type: 'star-o', text: '156' },
         { type: 'like-o', text: '156' },
         { type: 'message', text: '2' },
+        { type: 'message', text: '查看详情' },
       ],
     };
   },

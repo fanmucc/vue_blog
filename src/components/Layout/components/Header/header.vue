@@ -6,7 +6,7 @@
                 <span class="header-text">一个每日更新信息的博客</span>
             </a-col>
             <a-col :xs="0" :sm="0" :md="14" :lg="8" :xl="5">
-                <a-menu mode="horizontal">
+                <a-menu mode="horizontal" style="text-align: right;">
                     <a-menu-item key="home">首页</a-menu-item>
                     <a-menu-item key="about">标签</a-menu-item>
                 </a-menu>
@@ -27,6 +27,11 @@
             'a-menu': Menu,
             'a-menu-item': MenuItem,
             'a-icon': Icon
+        },
+        data () {
+            return {
+                current: ['home']
+            }
         }
     }
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="about">
-    <page-view>
-        <template slot="left">
+    <page-view-section>
+        <template>
             <div class="post-details">
                 <div class="detail-header">
                     <p class="article-information"><span class="article-time">发布日期: 2020.8.26</span>  <span class="label">前端</span></p>
@@ -13,45 +13,20 @@
                  </div>
             </div>
         </template>
-        <template slot="right">
-            <a-card hoverable style="width: 300px">
-              <img
-                slot="cover"
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-              <template slot="actions" class="ant-card-actions">
-                <a-icon key="setting" type="setting" />
-                <a-icon key="edit" type="edit" />
-                <a-icon key="ellipsis" type="ellipsis" />
-              </template>
-              <a-card-meta title="Card title" description="This is the description">
-                <a-avatar
-                  slot="avatar"
-                  src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"
-                />
-              </a-card-meta>
-            </a-card>
-            <div class="nav">
-                <a href="#同级组件传值">同级组件传值</a>
-            </div>
-        </template>
-    </page-view>
+    </page-view-section>
   </div>
 </template>
 <script>
-import PageView from '../components/pageView'
+import PageViewSection from '../components/pageViewSection'
 import { MarkdownPro } from 'vue-meditor'     // 编辑组件
 import { MarkdownPreview } from 'vue-meditor' // 渲染组件
 import { Icon, Avatar, Card } from 'ant-design-vue'
 const CardMeta = Card.Meta
-
 // import marked from 'marked'
-
 export default {
     name: 'About',
     components: {
-        PageView,
+        PageViewSection,
         MarkdownPro,
         MarkdownPreview,
         'a-icon': Icon,
@@ -95,11 +70,11 @@ export default {
         }
     },
     mounted () {
-      this.article = window.sessionStorage.getItem('markdown')
-      this.articledom = window.sessionStorage.getItem('markdownDom')
-      // console.log(this.articledom)
-      let toc = this.articledom.match(/<h[1-6][^<]*id=.*?>.*?<\/h[1-6]>/g)
-      console.log(toc)
+    //   this.article = window.sessionStorage.getItem('markdown')
+    //   this.articledom = window.sessionStorage.getItem('markdownDom')
+    //   // console.log(this.articledom)
+    //   let toc = this.articledom.match(/<h[1-6][^<]*id=.*?>.*?<\/h[1-6]>/g)
+    //   console.log(toc)
       // const renderer = {
       //     heading(text, level) {
       //       const escapedText = text.toLowerCase().replace(/[^\w]+/g, '-');
@@ -115,7 +90,7 @@ export default {
       //   marked.use({ renderer });
         // Run marked
         // console.log(marked('# heading+'));
-        // console.log(marked('### heading+'));
+        // console.log(marked('### heading+'s));
     },
     methods: {
         saveMarkdown(e) {
@@ -143,6 +118,9 @@ export default {
                 .label {
                     margin-left: 1rem;
                 }
+            }
+            .title {
+                font-size: 1.2rem;
             }
         }
     }

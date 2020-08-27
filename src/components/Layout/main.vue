@@ -1,7 +1,7 @@
 <template>
     <div>
         <a-affix class="affix" :offset-top="top">
-            <Header/>
+            <Header style="padding: 0 .5rem;"/>
         </a-affix>
         <router-view/>
     </div>
