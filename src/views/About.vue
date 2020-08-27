@@ -33,7 +33,7 @@
               </a-card-meta>
             </a-card>
             <div class="nav">
-
+                <a href="#同级组件传值">同级组件传值</a>
             </div>
         </template>
     </page-view>
